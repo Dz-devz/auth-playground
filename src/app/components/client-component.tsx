@@ -1,7 +1,8 @@
 'use client'
 
 import { createClient } from '@/utils/supabase/client';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import Logout from './logout';
 
 interface User {
     id: string;
@@ -26,8 +27,11 @@ export default function ClientComponent() {
   },[])
 
   return(
-    <>
-    <h1>Client Component</h1>
-    </>
+    <div className='flex items-center justify-center flex-col'>
+      <h1 className='text-center text-6xl'>
+      Welcome to my Auth Playground!
+      </h1>
+      <Logout />
+    </div>
   )
 }
