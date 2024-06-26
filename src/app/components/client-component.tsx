@@ -31,7 +31,6 @@ export default function ClientComponent() {
       <h1 className='text-center text-6xl'>
       Welcome to my Auth Playground!
       </h1>
-      <Logout />
     </div>
   )
 }

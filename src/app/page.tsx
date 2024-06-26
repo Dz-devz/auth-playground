@@ -4,9 +4,10 @@ import { logout } from "./logout/action";
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center flex-col gap-10">
-      <Login /> 
+    <main className="flex items-center mt-5 justify-center flex-col gap-10">
       <ClientComponent />
+      <Login /> 
+
     </main>
   );
 }
