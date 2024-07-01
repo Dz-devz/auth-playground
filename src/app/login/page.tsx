@@ -1,6 +1,6 @@
 import { login, signup } from "./action"
 
-export default function LoginPage() {   
+export default function LoginPage() {  
   return (
     <form>
       <label htmlFor="email">Email:</label>
@@ -8,7 +8,7 @@ export default function LoginPage() {
       <label htmlFor="password">Password:</label>
       <input id="password" name="password" type="password" required />
       <button className="mr-2 ml-2" formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
+      <button formAction={signup}>Sign Up</button>
     </form>
   )
 }
