@@ -1,4 +1,4 @@
-import { login, signup } from "./action"
+import { login, signUp } from "./action"
 
 export default function LoginPage() {  
   return (
@@ -8,7 +8,7 @@ export default function LoginPage() {
       <label htmlFor="password">Password:</label>
       <input id="password" name="password" type="password" required />
       <button className="mr-2 ml-2" formAction={login}>Log in</button>
-      <button formAction={signup}>Sign Up</button>
+      <button formAction={signUp}>Sign Up</button>
     </form>
   )
 }
