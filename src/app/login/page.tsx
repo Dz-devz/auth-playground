@@ -1,14 +1,24 @@
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { login, signUp } from "./action"
+import { Label } from "@/components/ui/label"
 
-export default function LoginPage() {  
+
+export default function LoginPage() {
+  // ...
+
   return (
-    <form>
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button className="mr-2 ml-2" formAction={login}>Log in</button>
-      <button formAction={signUp}>Sign Up</button>
-    </form>
+      <form>
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" name="email" placeholder="Email" />
+        <Label htmlFor="password">Password</Label>
+        <Input id="password" name="password" placeholder="Password" />
+        <Button type="submit">
+          <button formAction={login}>Log In</button>
+        </Button>
+        <Button className="mr-2 ml-2" type="submit">
+          <button formAction={signUp}>Sign un</button>
+        </Button>
+      </form>
   )
 }
