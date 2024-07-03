@@ -9,19 +9,14 @@ import { formSchema } from '@/action/formSchema'
 export async function login(formData: FormData) {
   const supabase = createClient()
 
-  const data = {
-    email: formData.get("email") as string,
-    password: formData.get("password") as string,
-  };
-
   // const parsedSchema = formSchema.safeParse(data);
 
-  // const parsedSchema = formSchema.parse({
-  //   id: formData.get("email"),
-  //   link: formData.get("password"),
-  // });
+  const parsedSchema = formSchema.parse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  });
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signInWithPassword(parsedSchema);
 
   if (error) {
     redirect('/error')
