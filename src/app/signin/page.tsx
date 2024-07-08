@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { login, signUp } from "./action"
+import { login, signUp } from "../login/action"
 import { Label } from "@/components/ui/label"
 
 
-export default function LoginPage() {
-  // ...
+export default function SignInPage() {
 
   return (
     <div className="flex items-center justify-center flex-col gap-4 mt-20">
@@ -18,7 +17,11 @@ export default function LoginPage() {
           <button formAction={login}>Log In</button>
         </Button>
         <Button type="submit">
-          <button formAction={signUp}>Sign up</button>
+        <p>
+            <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup">
+            Confirm your mail
+            </a>
+        </p>
         </Button>
         </div>
       </form>
