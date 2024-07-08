@@ -20,7 +20,7 @@ export default function LoginPage() {
           <button formAction={login}>Log In</button>
         </Button>
         <Button type="submit">
-          <button formAction={signUp}>Sign un</button>
+          <button formAction={signUp}>Sign up</button>
         </Button>
         </div>
       </form>
