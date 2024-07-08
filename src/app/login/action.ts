@@ -26,21 +26,33 @@ export async function login(formData: FormData) {
   redirect('/private')
 }
 
-export async function signUp(formData: FormData) {
-  const supabase = createClient()
+// export async function signUp(formData: FormData) {
+//   const supabase = createClient()
 
-  const parsedLogin = formSchema.parse({
-    email: formData.get("email"),
-    password: formData.get("password"),
-  });
+//   const parsedLogin = formSchema.parse({
+//     email: formData.get("email"),
+//     password: formData.get("password"),
+//   });
   
 
-  const { error } = await supabase.auth.signUp(parsedLogin)
+//   const { error } = await supabase.auth.signUp(parsedLogin)
 
-  if (error) { 
-    redirect('/error')
-  }
+//   if (error) { 
+//     redirect('/error')
+//   }
 
-  revalidatePath('/', 'layout')
-  redirect('/login')
+//   revalidatePath('/', 'layout')
+//   redirect('/login')
+// }
+
+
+export async function signInWithEmail() {
+  const { data, error } = await supabase.auth.signInWithOtp({
+    email: 'example@email.com',
+    options: {
+      // set this to false if you do not want the user to be automatically signed up
+      shouldCreateUser: false,
+      emailRedirectTo: 'https://example.com/welcome',
+    },
+  })
 }
