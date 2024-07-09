@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { login, signUp } from "./action"
+import { login } from "./action"
 import { Label } from "@/components/ui/label"
+import Link from "next/link"
 
 
 export default function LoginPage() {
@@ -19,8 +20,8 @@ export default function LoginPage() {
         <Button type="submit">
           <button formAction={login}>Log In</button>
         </Button>
-        <Button type="submit">
-          <button formAction={signUp}>Sign up</button>
+        <Button>
+          <Link href="/signin">Sign up</Link>
         </Button>
         </div>
       </form>

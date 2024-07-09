@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { login, signUp } from "../login/action"
+import { login } from "../login/action"
 import { Label } from "@/components/ui/label"
 
 
@@ -18,7 +18,7 @@ export default function SignInPage() {
         </Button>
         <Button type="submit">
         <p>
-            <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup">
+            <a href="{{ http://localhost:3000/login }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup">
             Confirm your mail
             </a>
         </p>
