@@ -17,11 +17,11 @@ export default function LoginPage() {
         <Label htmlFor="password">Password</Label>
         <Input id="password" name="password" placeholder="Password" />
         <div className="mt-2 flex gap-4 items-center justify-center">
-        <Button type="submit">
-          <button formAction={login}>Log In</button>
+        <Button type="submit" formAction={login}>
+          Log in
         </Button>
         <Button>
-          <Link href="/signin">Sign up</Link>
+          <Link href="/sign-up">Sign up</Link>
         </Button>
         </div>
       </form>

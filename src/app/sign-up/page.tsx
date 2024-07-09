@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { login } from "../login/action"
 import { Label } from "@/components/ui/label"
+import { signUpNewUser } from "./action"
 
 
 export default function SignInPage() {
@@ -12,16 +12,11 @@ export default function SignInPage() {
       <form>
         <Label htmlFor="email">Email</Label>
         <Input id="email" name="email" placeholder="Email" />
+        <Label htmlFor="password">Password</Label>
+        <Input id="password" name="password" placeholder="Password" type="password" />
         <div className="mt-2 flex gap-4 items-center justify-center">
-        <Button type="submit">
-          <button formAction={login}>Log In</button>
-        </Button>
-        <Button type="submit">
-        <p>
-            <a href="{{ http://localhost:3000/login }}/auth/confirm?token_hash={{ .TokenHash }}&type=signup">
-            Confirm your mail
-            </a>
-        </p>
+        <Button type="submit" formAction={signUpNewUser}>
+          Sign Up
         </Button>
         </div>
       </form>
