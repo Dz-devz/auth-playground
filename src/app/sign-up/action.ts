@@ -2,6 +2,7 @@
 
 import { createClient } from '@/utils/supabase/server'
 import { formSchema } from "../../action/formSchema"
+import { redirect } from "next/navigation";
 
 const supabase = createClient()
 
@@ -15,8 +16,6 @@ export async function signUpNewUser(formData: FormData) {
   const { data, error } = await supabase.auth.signUp({
     email: parsedSchema.email,
     password: parsedSchema.password,
-    options: {
-      emailRedirectTo: 'http://localhost:3000/login',
-    },
   })
+  redirect("/login");
 }
