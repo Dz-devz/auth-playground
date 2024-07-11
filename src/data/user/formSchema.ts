@@ -36,9 +36,3 @@ export const formSchema = z.object({
   });
   
   export type FormS = z.infer<typeof formSchema>;
-
-export const emailSchema = z.string().email({
-  message: "Invalid Input as Email.",
-});
-
-export type EmailS = z.infer<typeof emailSchema>;
