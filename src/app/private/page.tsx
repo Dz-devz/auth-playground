@@ -13,7 +13,8 @@ export default async function PrivatePage() {
 
   return(
   <>
-    <p>Hello {data.user.email}</p>
+    <p className='text-6xl text-center mt-auto mb-auto'>Hello {data.user.email}</p>
+    <p className='text-4xl text-center'>My Secret is I will be a successful on what I want to be!</p>
     <Logout />
   </>
   ) 
