@@ -4,12 +4,10 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 import { createClient } from '@/utils/supabase/server'
-import { formSchema } from '@/action/formSchema'
+import { formSchema } from '@/data/user/formSchema'
 
 export async function login(formData: FormData) {
   const supabase = createClient()
-
-  // const parsedSchema = formSchema.safeParse(data);
 
   const parsedSchema = formSchema.parse({
     email: formData.get("email"),
@@ -25,22 +23,3 @@ export async function login(formData: FormData) {
   revalidatePath('/', 'layout')
   redirect('/private')
 }
-
-// export async function signUp(formData: FormData) {
-//   const supabase = createClient()
-
-//   const parsedLogin = formSchema.parse({
-//     email: formData.get("email"),
-//     password: formData.get("password"),
-//   });
-  
-
-//   const { error } = await supabase.auth.signUp(parsedLogin)
-
-//   if (error) { 
-//     redirect('/error')
-//   }
-
-//   revalidatePath('/', 'layout')
-//   redirect('/login')
-// }

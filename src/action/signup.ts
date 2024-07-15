@@ -1,7 +1,7 @@
 'use server'
 
 import { createClient } from '@/utils/supabase/server'
-import { formSchema } from "../../action/formSchema"
+import { formSchema } from "../data/user/formSchema"
 import { redirect } from "next/navigation";
 
 const supabase = createClient()
